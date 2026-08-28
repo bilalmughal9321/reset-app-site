@@ -6,414 +6,135 @@
   <title>Terms of Use — Reset App</title>
   <meta name="description" content="Terms of Use (EULA) for Reset — habit tracking and wellness app." />
   <link rel="icon" href="assets/logo.jpeg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:       #5A8F7B;
-      --green-dark:  #2F6F5E;
-      --green-light: #A8CBBE;
-      --bg:          #EEF4F0;
-      --bg-card:     #DCEAE2;
-      --cream:       #EAE5D8;
-      --text:        #1F2D28;
-      --text-sub:    #5A6D65;
-      --white:       #FFFFFF;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: rgba(238, 244, 240, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--bg-card);
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .nav-logo span {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--text);
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-    .nav-back {
-      font-size: 0.9rem;
-      color: var(--green);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .nav-back:hover { color: var(--green-dark); }
-
-    /* ── HEADER ── */
-    .policy-header {
-      background: var(--cream);
-      padding: 64px 5% 48px;
-      border-bottom: 1px solid var(--bg-card);
-    }
-    .policy-header .badge {
-      display: inline-block;
-      background: var(--green-light);
-      color: var(--green-dark);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 99px;
-      margin-bottom: 16px;
-    }
-    .policy-header h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .policy-header .meta {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
-
-    /* ── LAYOUT ── */
-    .policy-body {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 56px 5% 80px;
-    }
-
-    /* ── INTRO BOX ── */
-    .intro-box {
-      background: var(--white);
-      border: 1px solid var(--bg-card);
-      border-left: 4px solid var(--green);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 48px;
-      font-size: 0.95rem;
-      color: var(--text-sub);
-    }
-    .intro-box strong { color: var(--text); }
-
-    /* ── SECTIONS ── */
-    .policy-section { margin-bottom: 48px; }
-    .policy-section h2 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.35rem;
-      color: var(--text);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--bg-card);
-    }
-    .policy-section p {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      margin-bottom: 12px;
-    }
-    .policy-section p:last-child { margin-bottom: 0; }
-    .policy-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 8px 0 12px;
-    }
-    .policy-section ul li {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      padding: 6px 0 6px 20px;
-      position: relative;
-      border-bottom: 1px solid var(--bg-card);
-    }
-    .policy-section ul li:last-child { border-bottom: none; }
-    .policy-section ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-size: 0.8rem;
-      top: 8px;
-    }
-
-    /* ── DATA TABLE ── */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      margin: 12px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--bg-card);
-    }
-    .data-table th {
-      background: var(--bg-card);
-      color: var(--text);
-      font-weight: 600;
-      padding: 10px 14px;
-      text-align: left;
-    }
-    .data-table td {
-      padding: 10px 14px;
-      color: var(--text-sub);
-      background: var(--white);
-      border-bottom: 1px solid var(--bg-card);
-      vertical-align: top;
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-
-    /* ── HIGHLIGHT BOX ── */
-    .highlight-box {
-      background: var(--bg-card);
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 16px 0;
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
-    .highlight-box strong { color: var(--green-dark); }
-
-    /* ── CONTACT ── */
-    .contact-card {
-      background: var(--white);
-      border: 1px solid var(--bg-card);
-      border-radius: 16px;
-      padding: 28px;
-      text-align: center;
-    }
-    .contact-card h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.2rem;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .contact-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 16px; }
-    .contact-card a {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      text-decoration: none;
-      padding: 10px 24px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    .contact-card a:hover { background: var(--green-dark); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--text);
-      color: rgba(255,255,255,0.6);
-      padding: 32px 5%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      font-size: 0.85rem;
-    }
-    .footer-brand {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.16em;
-      color: var(--white);
-      font-weight: 700;
-    }
-    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    footer a:hover { color: var(--green-light); }
-
-    @media (max-width: 600px) {
-      .data-table { font-size: 0.82rem; }
-      footer { flex-direction: column; text-align: center; }
-    }
+body { margin: 0; background: #F5EDE4; }
+  a { color: #B08D80; text-decoration: none; }
+  a:hover { color: #8C6E5C; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 12px 14px; font-size: 13.5px; }
+  th { background: #F0E3D8; color: #3A2A22; font-weight: 700; }
+  td { border-bottom: 1px solid #EDE0D4; color: #5C4A42; }
   </style>
 </head>
 <body>
+<div style="font-family: 'Nunito Sans', sans-serif; background: #F5EDE4; color: #3A2A22; min-height: 100vh;">
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="index.html">
-      <img src="assets/logo.jpeg" alt="Reset Logo" />
-      <span>RESET</span>
-    </a>
-    <a class="nav-back" href="index.html">← Back to Home</a>
-  </nav>
-
-  <!-- HEADER -->
-  <div class="policy-header">
-    <div class="badge">Legal</div>
-    <h1>Terms of Use</h1>
-    <p class="meta">Effective Date: April 25, 2026 &nbsp;·&nbsp; Last Updated: April 25, 2026</p>
+  <div style="border-bottom: 1px solid #E4D5C8; background: rgba(245,237,228,.92);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 30px; height: 30px; border-radius: 999px; background: linear-gradient(150deg, #C9AA9E, #B08D80); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;color:#FFF9F2;font-size:16px;">R</span></div>
+        <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 19px; color: #3A2A22;">Reset</span>
+      </a>
+      <a href="index.html" style="font-size: 14px; font-weight: 600; color: #5C4A42;">← Back to Home</a>
+    </div>
   </div>
 
-  <!-- BODY -->
-  <div class="policy-body">
+  <div style="max-width: 800px; margin: 0 auto; padding: 56px 32px 90px;">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: .1em; color: #B08D80;">LEGAL</div>
+    <div style="margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 42px; color: #3A2A22;">Terms of Use</div>
+    <div style="margin-top: 10px; font-size: 13.5px; color: #9C8A80;">Effective Date: April 25, 2026 · Last Updated: April 25, 2026</div>
 
-    <div class="intro-box">
-      <strong>Please read these Terms carefully.</strong> These Terms of Use ("Terms") form a legal agreement between you and <strong>Reset</strong> ("we", "us", or "our") governing your access to and use of the Reset mobile application. By downloading, accessing, or using Reset, you agree to be bound by these Terms. If you do not agree, please do not use the app.
+    <div style="margin-top: 30px; background: #fff; border-radius: 18px; padding: 22px 24px; font-size: 15px; line-height: 1.7; color: #5C4A42; box-shadow: 0 12px 24px -20px rgba(120,95,80,.5);">
+      <strong style="color: #3A2A22;">Please read these Terms carefully.</strong> These Terms of Use ("Terms") form a legal agreement between you and <strong style="color: #3A2A22;">Reset</strong> ("we", "us", or "our") governing your access to and use of the Reset mobile application. By downloading, accessing, or using Reset, you agree to be bound by these Terms. If you do not agree, please do not use the app.
     </div>
 
-    <!-- 1 -->
-    <div class="policy-section">
-      <h2>1. About Reset</h2>
-      <p>Reset is a wellness and habit-tracking application available on iOS. The app helps users build lasting daily habits, practise mindfulness through guided meditations, reflect through daily journaling, and access curated wellness e-books.</p>
-      <p><strong>App Name:</strong> Reset<br/>
-         <strong>Bundle Identifier:</strong> com.healthTracks.app<br/>
-         <strong>Developer:</strong> HealthTracks<br/>
-         <strong>Contact:</strong> Laura@resetapp.co</p>
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">1. About Reset</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Reset is a wellness and habit-tracking application available on iOS. The app helps users build lasting daily habits, practise mindfulness through guided meditations, reflect through daily journaling, and access curated wellness e-books.</p>
+    <div style="margin-top: 14px; background: #fff; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.8; color: #5C4A42; box-shadow: 0 10px 20px -18px rgba(120,95,80,.4);">
+      <strong style="color: #3A2A22;">App Name:</strong> Reset<br>
+      <strong style="color: #3A2A22;">Bundle Identifier:</strong> com.healthTracks.app<br>
+      <strong style="color: #3A2A22;">Developer:</strong> HealthTracks<br>
+      <strong style="color: #3A2A22;">Contact:</strong> Laura@resetapp.co
     </div>
 
-    <!-- 2 -->
-    <div class="policy-section">
-      <h2>2. Eligibility &amp; Account</h2>
-      <p>You must be at least 13 years old to create an account and use Reset. By registering, you confirm that the information you provide (name, email, and any optional profile details) is accurate and that you will keep it up to date.</p>
-      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately at <strong>Laura@resetapp.co</strong> if you suspect unauthorised access to your account.</p>
-    </div>
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">2. Eligibility &amp; Account</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">You must be at least 13 years old to create an account and use Reset. By registering, you confirm that the information you provide (name, email, and any optional profile details) is accurate and that you will keep it up to date.</p>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately at <strong style="color: #3A2A22;">Laura@resetapp.co</strong> if you suspect unauthorised access to your account.</p>
 
-    <!-- 3 -->
-    <div class="policy-section">
-      <h2>3. Subscriptions &amp; Payment</h2>
-      <p>Certain features of Reset — including full access to Habit Tracking, the Meditation Library, and Journaling — require an auto-renewable subscription ("Reset Premium"), purchased through the Apple App Store.</p>
-
-      <table class="data-table">
-        <thead>
-          <tr><th>Plan</th><th>Length</th><th>Price</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Monthly</td><td>1 month, renews automatically</td><td>AED 19.99 / month</td></tr>
-          <tr><td>Yearly</td><td>1 year, renews automatically</td><td>AED 159.99 / year</td></tr>
-        </tbody>
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">3. Subscriptions &amp; Payment</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Certain features of Reset — including full access to Habit Tracking, the Meditation Library, and Journaling — require an auto-renewable subscription ("Reset Premium"), purchased through the Apple App Store.</p>
+    <div style="margin-top: 8px; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 20px -18px rgba(120,95,80,.4);">
+      <table>
+        <tr><th>Plan</th><th>Length</th><th>Price</th></tr>
+        <tr><td>Monthly</td><td>1 month, renews automatically</td><td>AED 19.99 / month</td></tr>
+        <tr><td>Yearly</td><td>1 year, renews automatically</td><td>AED 159.99 / year</td></tr>
       </table>
-
-      <p style="margin-top:12px;">Prices are shown in AED but may be charged in your local currency and storefront pricing tier, as set by the App Store. Payment is charged to your Apple ID account at confirmation of purchase.</p>
-
-      <h3 style="font-size:1rem; color:var(--text); margin: 16px 0 8px;">3.1 Auto-Renewal</h3>
-      <p>Your subscription automatically renews for the same plan and duration unless you turn off auto-renew at least 24 hours before the end of the current billing period. Your account will be charged for renewal within 24 hours prior to the end of the current period, at the price you originally agreed to (subject to any price changes we notify you of in advance, as required by the App Store).</p>
-
-      <h3 style="font-size:1rem; color:var(--text); margin: 16px 0 8px;">3.2 Managing &amp; Cancelling</h3>
-      <p>You can manage or cancel your subscription at any time from <strong>Profile → Manage Subscription</strong> inside the app, which opens your device's native subscription settings, or directly via <strong>Settings → [Your Name] → Subscriptions</strong> on your iOS device. Cancelling stops future renewals but does not refund the current billing period — access continues until the end of the period you already paid for.</p>
-
-      <h3 style="font-size:1rem; color:var(--text); margin: 16px 0 8px;">3.3 Refunds</h3>
-      <p>All payments are processed by Apple. Reset does not directly process refunds. Refund requests are handled entirely by Apple in accordance with the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" style="color:var(--green); font-weight:600;">Apple Media Services Terms and Conditions</a>.</p>
-
-      <div class="highlight-box">
-        If a free trial is offered for any plan, any unused portion of the trial is forfeited once you purchase a subscription, and payment for the subscription will be charged at the end of the trial period unless cancelled beforehand.
-      </div>
     </div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Prices are shown in AED but may be charged in your local currency and storefront pricing tier, as set by the App Store. Payment is charged to your Apple ID account at confirmation of purchase.</p>
 
-    <!-- 4 -->
-    <div class="policy-section">
-      <h2>4. Health &amp; Wellness Disclaimer</h2>
-      <p>Reset is a general wellness tool intended to support healthy habits, mindfulness, and self-reflection. It is <strong>not a medical device</strong> and does not provide medical advice, diagnosis, or treatment. The meditation, journaling, and habit content in the app is for general informational and wellness purposes only.</p>
-      <p>Always consult a qualified healthcare professional before making changes to your physical or mental health routine, especially if you have an existing medical condition. Do not disregard or delay seeking professional medical advice because of something you read or experienced in the app.</p>
+    <div style="margin-top: 18px; font-size: 16px; font-weight: 700; color: #3A2A22;">3.1 Auto-Renewal</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Your subscription automatically renews for the same plan and duration unless you turn off auto-renew at least 24 hours before the end of the current billing period. Your account will be charged for renewal within 24 hours prior to the end of the current period, at the price you originally agreed to (subject to any price changes we notify you of in advance, as required by the App Store).</p>
+
+    <div style="margin-top: 18px; font-size: 16px; font-weight: 700; color: #3A2A22;">3.2 Managing &amp; Cancelling</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">You can manage or cancel your subscription at any time from <strong style="color: #3A2A22;">Profile → Manage Subscription</strong> inside the app, which opens your device's native subscription settings, or directly via Settings → [Your Name] → Subscriptions on your iOS device. Cancelling stops future renewals but does not refund the current billing period — access continues until the end of the period you already paid for.</p>
+
+    <div style="margin-top: 18px; font-size: 16px; font-weight: 700; color: #3A2A22;">3.3 Refunds</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">All payments are processed by Apple. Reset does not directly process refunds. Refund requests are handled entirely by Apple in accordance with the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Media Services Terms and Conditions</a>.</p>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">If a free trial is offered for any plan, any unused portion of the trial is forfeited once you purchase a subscription, and payment for the subscription will be charged at the end of the trial period unless cancelled beforehand.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">4. Health &amp; Wellness Disclaimer</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Reset is a general wellness tool intended to support healthy habits, mindfulness, and self-reflection. It is <strong style="color: #3A2A22;">not a medical device</strong> and does not provide medical advice, diagnosis, or treatment. The meditation, journaling, and habit content in the app is for general informational and wellness purposes only.</p>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Always consult a qualified healthcare professional before making changes to your physical or mental health routine, especially if you have an existing medical condition. Do not disregard or delay seeking professional medical advice because of something you read or experienced in the app.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">5. Your Content</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">You retain ownership of the content you create in Reset — journal entries, habit names, and profile information ("Your Content"). By submitting Your Content, you grant us a limited licence to store, process, and display it back to you solely to provide the app's features.</p>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Reset has no social or sharing features — Your Content is private to your account and is never shown to other users or made public. See our <a href="privacy-policy.html">Privacy Policy</a> for details on how we store and protect this data.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">6. Acceptable Use</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">When using Reset, you agree not to:</p>
+    <ul style="font-size: 15px; line-height: 1.85; color: #5C4A42; padding-left: 20px;">
+      <li>Use the app for any unlawful purpose or in violation of these Terms</li>
+      <li>Attempt to gain unauthorised access to our systems, other users' accounts, or app content</li>
+      <li>Reverse-engineer, decompile, or attempt to extract the source code of the app, except as permitted by law</li>
+      <li>Interfere with or disrupt the app's operation, servers, or networks</li>
+      <li>Circumvent or attempt to bypass the subscription/paywall system</li>
+    </ul>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">7. Intellectual Property</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">The Reset app — including its design, branding, guided meditations, e-books, and all other content we provide (excluding Your Content) — is owned by us or our licensors and is protected by copyright and other intellectual property laws. We grant you a limited, non-exclusive, non-transferable licence to use the app for your personal, non-commercial use, subject to these Terms.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">8. Third-Party Services</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Reset relies on third-party infrastructure — including Google Firebase (for data storage) and the Apple App Store (for subscription billing) — to operate. Your use of these services is also subject to their own terms and privacy policies.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">9. Termination</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">You may stop using Reset and delete your account at any time from <strong style="color: #3A2A22;">Profile → Delete Account</strong> inside the app. Deletion is immediate and irreversible, and removes your personal data as described in our Privacy Policy.</p>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">We may suspend or terminate your access to Reset if you violate these Terms, without prejudice to any other rights or remedies available to us.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">10. Disclaimer of Warranties</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">Reset is provided "as is" and "as available," without warranties of any kind, whether express or implied. We do not guarantee that the app will be uninterrupted, error-free, or completely secure.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">11. Limitation of Liability</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">To the fullest extent permitted by law, Reset and its developers shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, the app.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">12. Governing Law</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">These Terms are governed by and construed in accordance with the laws of the United Arab Emirates, without regard to its conflict of law principles.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">13. Changes to These Terms</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">We may update these Terms from time to time. When we do, we will update the "Last Updated" date at the top of this page. Continued use of Reset after changes are posted constitutes your acceptance of the revised Terms.</p>
+
+    <div style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #B08D80;">14. Contact Us</div>
+    <p style="font-size: 15px; line-height: 1.75; color: #5C4A42;">If you have any questions about these Terms of Use, please reach out to us:</p>
+
+    <div style="margin-top: 16px; border-radius: 18px; padding: 26px; text-align: center; background: linear-gradient(150deg, #C9AA9E 0%, #B08D80 100%);">
+      <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 20px; color: #FFF9F2;">Get in Touch</div>
+      <div style="margin-top: 6px; font-size: 14px; color: rgba(255,249,242,.85);">We're happy to clarify anything in these Terms.</div>
+      <div style="margin-top: 14px;"><a href="mailto:Laura@resetapp.co" style="color: #FFF9F2; font-weight: 700; font-size: 15px;">Laura@resetapp.co</a></div>
     </div>
-
-    <!-- 5 -->
-    <div class="policy-section">
-      <h2>5. Your Content</h2>
-      <p>You retain ownership of the content you create in Reset — journal entries, habit names, and profile information ("Your Content"). By submitting Your Content, you grant us a limited licence to store, process, and display it back to you solely to provide the app's features.</p>
-      <p>Reset has no social or sharing features — Your Content is private to your account and is never shown to other users or made public. See our <a href="privacy-policy.html" style="color:var(--green); font-weight:600;">Privacy Policy</a> for details on how we store and protect this data.</p>
-    </div>
-
-    <!-- 6 -->
-    <div class="policy-section">
-      <h2>6. Acceptable Use</h2>
-      <p>When using Reset, you agree not to:</p>
-      <ul>
-        <li>Use the app for any unlawful purpose or in violation of these Terms</li>
-        <li>Attempt to gain unauthorised access to our systems, other users' accounts, or app content</li>
-        <li>Reverse-engineer, decompile, or attempt to extract the source code of the app, except as permitted by law</li>
-        <li>Interfere with or disrupt the app's operation, servers, or networks</li>
-        <li>Circumvent or attempt to bypass the subscription/paywall system</li>
-      </ul>
-    </div>
-
-    <!-- 7 -->
-    <div class="policy-section">
-      <h2>7. Intellectual Property</h2>
-      <p>The Reset app — including its design, branding, guided meditations, e-books, and all other content we provide (excluding Your Content) — is owned by us or our licensors and is protected by copyright and other intellectual property laws. We grant you a limited, non-exclusive, non-transferable licence to use the app for your personal, non-commercial use, subject to these Terms.</p>
-    </div>
-
-    <!-- 8 -->
-    <div class="policy-section">
-      <h2>8. Third-Party Services</h2>
-      <p>Reset relies on third-party infrastructure — including Google Firebase (for data storage) and the Apple App Store (for subscription billing) — to operate. Your use of these services is also subject to their own terms and privacy policies.</p>
-    </div>
-
-    <!-- 9 -->
-    <div class="policy-section">
-      <h2>9. Termination</h2>
-      <p>You may stop using Reset and delete your account at any time from <strong>Profile → Delete Account</strong> inside the app. Deletion is immediate and irreversible, and removes your personal data as described in our Privacy Policy.</p>
-      <p>We may suspend or terminate your access to Reset if you violate these Terms, without prejudice to any other rights or remedies available to us.</p>
-    </div>
-
-    <!-- 10 -->
-    <div class="policy-section">
-      <h2>10. Disclaimer of Warranties</h2>
-      <p>Reset is provided "as is" and "as available," without warranties of any kind, whether express or implied. We do not guarantee that the app will be uninterrupted, error-free, or completely secure.</p>
-    </div>
-
-    <!-- 11 -->
-    <div class="policy-section">
-      <h2>11. Limitation of Liability</h2>
-      <p>To the fullest extent permitted by law, Reset and its developers shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, the app.</p>
-    </div>
-
-    <!-- 12 -->
-    <div class="policy-section">
-      <h2>12. Governing Law</h2>
-      <p>These Terms are governed by and construed in accordance with the laws of the United Arab Emirates, without regard to its conflict of law principles.</p>
-    </div>
-
-    <!-- 13 -->
-    <div class="policy-section">
-      <h2>13. Changes to These Terms</h2>
-      <p>We may update these Terms from time to time. When we do, we will update the "Last Updated" date at the top of this page. Continued use of Reset after changes are posted constitutes your acceptance of the revised Terms.</p>
-    </div>
-
-    <!-- 14 -->
-    <div class="policy-section">
-      <h2>14. Contact Us</h2>
-      <p>If you have any questions about these Terms of Use, please reach out to us:</p>
-      <div class="contact-card">
-        <h3>Get in Touch</h3>
-        <p>We're happy to clarify anything in these Terms.</p>
-        <a href="mailto:Laura@resetapp.co">Laura@resetapp.co</a>
-      </div>
-    </div>
-
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-brand">RESET</span>
-    <div style="display:flex; gap:20px;">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
+  <div style="border-top: 1px solid #E4D5C8; padding: 30px 32px; text-align: center;">
+    <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 16px; color: #3A2A22;">Reset</div>
+    <div style="margin-top: 10px; display: flex; justify-content: center; gap: 22px;">
+      <a href="index.html" style="font-size: 13px; font-weight: 600; color: #7C6A62;">Home</a>
+      <a href="privacy-policy.html" style="font-size: 13px; font-weight: 600; color: #7C6A62;">Privacy Policy</a>
+      <a href="support.html" style="font-size: 13px; font-weight: 600; color: #7C6A62;">Support</a>
     </div>
-    <span>&copy; 2026 Reset. All rights reserved.</span>
-  </footer>
+    <div style="margin-top: 10px; font-size: 12.5px; color: #9C8A80;">© 2026 Reset. All rights reserved.</div>
+  </div>
+</div>
 
 </body>
 </html>
